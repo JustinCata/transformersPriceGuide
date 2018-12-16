@@ -19,9 +19,9 @@ class Product extends Component {
                     </Link>
                 </div>
                 <div className='col-sm-6 details'>
-                    <p>Card Name: {props.cardName}</p>
-                    <p>Card ID: {props.cardID}</p>
-                    <p>Rarity: {props.rarity}</p>
+                    <p>Card Name: {this.props.cardName}</p>
+                    <p>Card ID: {this.props.cardID}</p>
+                    <p>Rarity: {this.props.rarity}</p>
                 </div>
             </div>
         );
