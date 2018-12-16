@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Landing from './Landing';
+import Nav from './Nav';
 import Card from './Card';
 
 class Home extends Component {
@@ -66,7 +66,7 @@ class Home extends Component {
         ));
         return (
             <div className='Home'>
-                <Landing />
+                <Nav onSubmit={(search) => this.handleSubmit(search)} />
                 <div className='col-md-6'>
                     {risingCards}
                 </div>
