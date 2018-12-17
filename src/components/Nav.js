@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class Nav extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {query: ''};
 
         this.onSubmit = this.onSubmit.bind(this);
@@ -12,7 +12,7 @@ class Nav extends Component {
         this.setState({
             query: document.getElementById('search').value,
         }, () => {
-            this.props.handleSubmit(this.state.query);
+            this.props.handleSearch(this.state.query);
         });
     }
 

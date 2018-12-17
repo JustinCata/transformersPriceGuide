@@ -11,8 +11,10 @@ class Search extends Component {
             query: '',
             posts: [],
         };
-    
-    }
+
+    this.handleSearch = this.handleSearch.bind(this);
+
+}
 
     componentDidMount() {
         const query = this.props.match.params.query;
@@ -23,9 +25,9 @@ class Search extends Component {
         });
     }
 
-    handleSubmit() {
+    handleSearch(search) {
         this.setState({
-            query: document.getElementById('search').value,
+            query: search,
         }, () => {
             this.props.history.push(`/search/${this.state.query}`);
         });
@@ -42,6 +44,7 @@ class Search extends Component {
             console.log(res);
             this.setState({
                 posts: res.posts,
+                navbar: <Nav handleSearch={(search) => this.handleSearch(search)}/>,
             });
         })
         .catch(err => {
@@ -60,7 +63,7 @@ class Search extends Component {
             />));
         return (
             <div>
-                <Nav onSubmit={(search) => this.handleSubmit(search)} />
+                {this.state.navbar}
                 <h3><i className="fa fa-search" aria-hidden="true"></i> Search results for: <strong>{this.state.query}</strong></h3>
                     {searchResults}
             </div>
@@ -68,4 +71,4 @@ class Search extends Component {
     }
 }
 
-export default Search
+export default Search;

@@ -9,9 +9,10 @@ class Home extends Component {
         this.state = {
             Rising: [],
             Falling: [],
+            query: '',
         };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
     }
     componentDidMount() {
         this.getCards();
@@ -40,9 +41,9 @@ class Home extends Component {
             console.log(err);
         });
     }
-    handleSubmit() {
+    handleSearch(search) {
         this.setState({
-            query: document.getElementById('search').value,
+            query: search,
         }, () => {
             this.props.history.push(`/search/${this.state.query}`);
         });
@@ -67,7 +68,7 @@ class Home extends Component {
         ));
         return (
             <div className='Home'>
-                <Nav />
+                <Nav handleSearch={(search) => this.handleSearch(search)} />
                 <div className='col-md-6 title'>
                     <h3>Rising Cards</h3>
                     {risingCards}
