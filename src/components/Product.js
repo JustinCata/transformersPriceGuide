@@ -3,19 +3,19 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Product extends Component {
     constructor(props) {
-        super();
+        super(props);
         this.state= {
-            viewLink: `/product/${String(props.id)}`,
+            viewLink: `/product/${String(props._id)}`,
         }
     }
+
     render() {
-        const api = 'https://development.metamesh.io/';
 
         return (
             <div className='col-sm-12'>
                 <div className='col-sm-6 image'>
                     <Link to={this.state.viewLink}>
-                        <img style={{width: '100%'}}/>
+                        <img style={{width: '100%'}} src={`https://development.metamesh.io/${this.props.image}`} alt="card"/>
                     </Link>
                 </div>
                 <div className='col-sm-6 details'>

@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
-class Landing extends Component {
+class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = {query: ''};
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
-    handleSubmit() {
+    onSubmit() {
         this.setState({
             query: document.getElementById('search').value,
         }, () => {
-            this.props.history.push(`/search/${this.state.query}`);
+            this.props.handleSubmit(this.state.query);
         });
     }
 
@@ -24,7 +24,7 @@ class Landing extends Component {
                     <p>Transformers TCG Prices</p>
                 </div>                
                 <div className='col-sm-12 Search'>
-                    <form action="#" onSubmit={this.handleSubmit} className="form-inline">
+                    <form action="#" onSubmit={this.onSubmit} className="form-inline">
                         <input id="search" className="form-control" type="search" placeholder="Enter Card Name or Card ID" style={{ fontFamily:"Arial, FontAwesome"}} aria-label="Search" />
                         <input type="submit" value="Find Card" />
                     </form>
@@ -34,4 +34,4 @@ class Landing extends Component {
     }
 }
 
-export default Landing;
+export default Nav;
