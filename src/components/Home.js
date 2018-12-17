@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Landing from './Landing';
 import Card from './Card';
+import './Home.css'
 
 class Home extends Component {
     constructor(props) {
@@ -67,10 +68,12 @@ class Home extends Component {
         return (
             <div className='Home'>
                 <Landing />
-                <div className='col-md-6'>
+                <div className='col-md-6 title'>
+                    <h3>Rising Cards</h3>
                     {risingCards}
                 </div>
-                <div className='col-md-6'>
+                <div className='col-md-6 title'>
+                    <h3>Losing Cards</h3>
                     {fallingCards}
                 </div>
             </div>

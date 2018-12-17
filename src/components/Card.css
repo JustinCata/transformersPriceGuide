@@ -1,0 +1,18 @@
+.Card{
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 5px;
+    box-shadow: 0 2px 19px 4px rgba(0, 0, 0, 0.14);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.Card .image{
+    text-align: center;
+    height: 350px;
+}
+.Card .price{
+    text-align: center;
+}
+.Card .percentage{
+    text-align: center;
+}
