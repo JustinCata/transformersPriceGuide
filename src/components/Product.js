@@ -5,7 +5,7 @@ class Product extends Component {
     constructor(props) {
         super(props);
         this.state= {
-            viewLink: `/product/${String(props._id)}`,
+            viewLink: `/card/${String(props.cardName)}`,
         }
     }
 

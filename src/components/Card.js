@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 class Card extends Component {
     constructor(props) {
-        super();
+        super(props);
         this.state= {
-            viewLink: `/card/${String(props._id)}`,
+            viewLink: `/card/${String(props.cardName)}`,
         }
     }
     render() {

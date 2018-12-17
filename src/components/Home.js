@@ -53,6 +53,7 @@ class Home extends Component {
         const risingCards = this.state.Rising.map(card => (
             <Card 
                 key={card._id}
+                cardName={card.name}
                 image={card.image}
                 avgPrice={card.avgPrice}
                 dayChange={card.dayChange}
@@ -61,6 +62,7 @@ class Home extends Component {
         const fallingCards = this.state.Falling.map(card => (
             <Card 
                 key={card._id}
+                cardName={card.name}
                 image={card.image}
                 avgPrice={card.avgPrice}
                 dayChange={card.dayChange}
