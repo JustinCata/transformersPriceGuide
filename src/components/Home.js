@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Landing from './Landing';
+import Nav from './Nav';
 import Card from './Card';
 import './Home.css'
 
@@ -67,7 +67,7 @@ class Home extends Component {
         ));
         return (
             <div className='Home'>
-                <Landing />
+                <Nav />
                 <div className='col-md-6 title'>
                     <h3>Rising Cards</h3>
                     {risingCards}
