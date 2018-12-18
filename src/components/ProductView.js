@@ -9,6 +9,7 @@ class ProductView extends Component {
         super(props);
         this.state = {
             query: '',
+            avgPrice: 0.00,
             viewLink: `/card/${String(props.cardName)}`,
         };
 
@@ -61,16 +62,16 @@ class ProductView extends Component {
 
         return(
             <div className='col-xs-12'>
-            <div className='col-xs-1'></div>
+                <div className='col-xs-1'></div>
                 <div className='col-xs-5 Card'>
                     <Link to={this.state.viewLink}>
                         <img src={`https://development.metamesh.io/${this.state.image}`} style={{width: '100%'}}/>
                     </Link>
                 </div>
-                
-                <div className='col-xs-5 Card'>
+                <div className='col-xs-1'></div>
+                <div className='col-xs-4 Card'>
                     <div className='col-xs-6'>  
-                        <h4 className='col-xs-12' style={{color: percentColor}}>${this.state.avgPrice}</h4>
+                        <h4 className='col-xs-12' style={{color: percentColor}}>${(this.state.avgPrice).toFixed(2)}</h4>
                         <div className='col-xs-12'>Average Sold Price</div>
                         <h4 className='col-xs-12 Stat'>{this.state.rarity}</h4>
                         <div className='col-xs-12'>Card Rarity</div>
@@ -82,10 +83,11 @@ class ProductView extends Component {
                         <div className='col-xs-12'>Listed High Price</div>
                         <h4 className='col-xs-12 Stat'>${this.state.lowPrice}</h4>
                         <div className='col-xs-12'>Listed Low Price</div>
-                        <h4 className='col-xs-12 Stat' style={{color: percentColor}}>{this.state.dayChange}%</h4>
+                        <h4 className='col-xs-12 Stat ' style={{color: percentColor}} >{this.state.dayChange}%</h4>
                         <div className='col-xs-12'>Daily Price Change</div>
                     </div>
                 </div>
+                <div className='col-xs-1'></div>
             </div>
         );
     }
