@@ -26,7 +26,7 @@ class Product extends Component {
                     <h4 className='col-xs-12 Stat'>{this.props.cardID}</h4>
                     <div className='col-xs-12'>Card ID</div>
                     <h4 className='col-xs-12 Stat'>{this.props.rarity}</h4>
-                    <div className='col-xs-12'>Card Rarity</div>
+                    <div className='col-xs-12' style={{marginBottom: 10}}>Card Rarity</div>
                 </div>
             </div>
         );
