@@ -13,6 +13,8 @@ class ProductView extends Component {
             viewLink: `/card/${String(props.cardName)}`,
         };
 
+    this.handleSearch = this.handleSearch.bind(this);
+
     }
 
     componentDidMount() {
@@ -23,6 +25,40 @@ class ProductView extends Component {
           });
           const cardName = match.params.cardName;
           this.card(cardName);
+
+          const query = this.props.match.params.query;
+        this.setState({
+            query: query,
+        }, ()=>{
+            this.search(query);
+        });
+    }
+
+    handleSearch(search) {
+        this.setState({
+            query: search,
+        }, () => {
+            this.props.history.push(`/search/${this.state.query}`);
+        });
+    }
+
+    search(query) {
+        fetch(`https://development.metamesh.io/api/v1/guest/post?search=${query}`, {
+            mode: 'cors',
+            method: 'GET',   
+        })
+        .then(results => {
+            return results.json();
+        }).then(res => {
+            console.log(res);
+            this.setState({
+                posts: res.posts,
+                navbar: <Nav handleSearch={(search) => this.handleSearch(search)}/>,
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
     }
 
     card(cardName) {
@@ -44,6 +80,7 @@ class ProductView extends Component {
                 highPrice: res.posts[0].highPrice,
                 dayChange: res.posts[0].dayChange,
 
+               
             });
         })
         .catch(err => {
@@ -62,6 +99,7 @@ class ProductView extends Component {
 
         return(
             <div className='col-xs-12'>
+                {this.state.navbar}
                 <div className='col-xs-1'></div>
                 <div className='col-xs-5 Card'>
                     <Link to={this.state.viewLink}>
