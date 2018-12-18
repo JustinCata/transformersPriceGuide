@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import logo from "./assets/transformers-logo.png"
+import "./Nav.css"
 
 class Nav extends Component {
     constructor() {
@@ -19,16 +21,17 @@ class Nav extends Component {
     render(){
         return (
             <div className='Landing'>
-                <div className="col-sm-12">
+                <div className="col-sm-12 nav">
                     {/*Logo will go here*/}
-                    <p>Transformers TCG Prices</p>
-                </div>                
-                <div className='col-sm-12 Search'>
+                    <img src= {logo} alt= "Logo"/>
+                    <div className='col-sm-12 Search'>
                     <form action="#" onSubmit={this.onSubmit} className="form-inline">
                         <input id="search" className="form-control" type="search" placeholder="Enter Card Name or Card ID" style={{ fontFamily:"Arial, FontAwesome"}} aria-label="Search" />
                         <input type="submit" value="Find Card" />
                     </form>
                 </div>      
+                </div>                
+                
             </div>
         );
     }
