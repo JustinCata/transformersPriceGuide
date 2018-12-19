@@ -5,14 +5,24 @@
     box-shadow: 0 2px 19px 4px rgba(0, 0, 0, 0.14);
     margin-bottom: 20px;
     margin-top: 20px;
+    padding-top: 15px;
 }
 .Card .image{
     text-align: center;
     height: 350px;
+    margin-bottom: 15px;
 }
 .Card .price{
+    
+    background-color: white;
     text-align: center;
 }
 .Card .percentage{
+    
+    background-color: white;
     text-align: center;
+}
+
+.Card h3{
+    margin-top: 0%;
 }

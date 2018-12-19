@@ -72,11 +72,11 @@ class Home extends Component {
             <div className='Home'>
                 <Nav handleSearch={(search) => this.handleSearch(search)} />
                 <div className='col-md-6 title'>
-                    <h3>Rising Cards</h3>
+                    <h2>Rising Cards</h2>
                     {risingCards}
                 </div>
                 <div className='col-md-6 title'>
-                    <h3>Losing Cards</h3>
+                    <h2>Losing Cards</h2>
                     {fallingCards}
                 </div>
             </div>
