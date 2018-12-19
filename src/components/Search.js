@@ -3,6 +3,7 @@ import { matchPath } from 'react-router';
 import Nav from './Nav'
 import Product from './Product'
 import './Search.css'
+import './ProductView.css'
 
 
 class Search extends Component {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { matchPath } from 'react-router';
 import Nav from './Nav';
 import './ProductView.css';
+import './Card.css';
 
 class ProductView extends Component {
     constructor(props) {
