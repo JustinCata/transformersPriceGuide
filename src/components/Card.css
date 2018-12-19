@@ -31,6 +31,9 @@
 .Card h3{
     margin-top: 5px;
 }
+#searchField{
+    display: block;
+}
 /* =========================Responsiveness==============================================*/
 /* =========================Responsiveness==============================================*/
 /* =========================Responsiveness==============================================*/
@@ -46,8 +49,39 @@
 
 }
 
-@media only screen and (min-width: 300px) and (max-width: 640px) {
-  
+@media only screen and (min-width: 300px) and (max-width: 587px) {
+    .nav{
+        padding: 0px;
+    }
+    #searchField{
+        width: 100%;
+        display: inline-flex !important;
+        margin-bottom: 15px;
+        margin-left: 30px;
+    }
+    .submitSearch{
+        font-size: 14px;
+        margin-left: 15px;
+    }
+    #risingTitle{
+        font-size: 24px !important;
+    }
+    #fallingTitle{
+        font-size: 24px !important;
+    }
+    .nav img {
+        max-width: 300px;
+        padding: 25px;
+    }
+    .Card img{
+        height: 170px !important;
+    }
+    .Card .image{
+        height: 170px !important;
+    }
+    .Card h3{
+        font-size: 18px;
+    }
 }
 @media only screen and (min-width: 500px) {
 
@@ -58,6 +92,9 @@
     .nav img {
         max-width: 500px;
         padding: 25px;
+    }
+    #searchField{
+        display: inline-flex !important;
     }
     .Card img{
         height: 284px !important;

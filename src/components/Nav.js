@@ -26,7 +26,7 @@ class Nav extends Component {
                     <img src= {logo} alt= "Logo"/>
                     <div className='col-xs-12 Search'>
                     <form action="#" onSubmit={this.onSubmit} className="form-inline">
-                        <span style={{display: 'inline-flex'}}>
+                        <span id="searchField">
                             <input id="search" className="form-control" type="search" placeholder="Enter Card Name" style={{ fontFamily:"Arial, FontAwesome"}} aria-label="Search" />
                             <input className="submitSearch" type="submit" value="Find Card" />
                         </span>
