@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { matchPath } from 'react-router';
 import Nav from './Nav'
 import Product from './Product'
+import './Search.css'
 
 
 class Search extends Component {
@@ -64,8 +65,11 @@ class Search extends Component {
         return (
             <div>
                 {this.state.navbar}
+                <div className="search-bar">
                 <h3><i className="fa fa-search" aria-hidden="true"></i> Search results for: <strong>{this.state.query}</strong></h3>
                     {searchResults}
+                </div>
+               
             </div>
         );
     }

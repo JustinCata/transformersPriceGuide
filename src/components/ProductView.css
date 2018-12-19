@@ -10,6 +10,63 @@
     opacity: 1.0;
 }
 
+.product-card{
+    background-color: white;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 10px;
+    box-shadow: 0 2px 19px 4px rgba(0, 0, 0, 0.14);
+    margin-bottom: 20px;
+    margin-top: 24px;
+    opacity: 1.0;
+    width: 40%;
+    margin-left: 7%;
+}
+
 .Stat{
     margin-top: 25px;
+}
+
+.main {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen  and (max-width: 767px) {
+
+    .product-card {
+        background-color: white;
+        padding-right: 0px;
+        padding-left: 0px;
+        border-radius: 10px;
+        box-shadow: 0 2px 19px 4px rgba(0, 0, 0, 0.14);
+        margin-bottom: 20px;
+        margin-top: 24px;
+        opacity: 1.0;
+        width: 82%;
+        text-align: center;
+        margin-left: 10%;
+    }
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  
+
+}
+
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) and (max-width: 1190px) {
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1280px) {
+  
+}
+@media only screen and (min-width: 1400px) {
+
 }

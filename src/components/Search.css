@@ -10,3 +10,11 @@
 .Stat{
     margin-top: 25px;
 }
+
+.search-bar {
+    background-color: white !important;
+}
+
+.fa {
+    padding: 10px;
+}
