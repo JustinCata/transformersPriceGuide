@@ -1,3 +1,19 @@
 .Home .title {
     text-align: center;
 }
+#risingTitle{
+    background-color: white;
+    font-size: 30px;
+    box-shadow: 0 2px 19px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+#fallingTitle{
+    background-color: white;
+    font-size: 30px;
+    box-shadow: 0 2px 19px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+}

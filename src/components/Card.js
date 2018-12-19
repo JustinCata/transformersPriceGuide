@@ -29,7 +29,7 @@ class Card extends Component {
                     </Link>
                 </div>
                 <div className='col-xs-6 price'>
-                    <h3>${this.props.avgPrice}</h3>
+                    <h3>${this.props.avgPrice.toFixed(2)}</h3>
                 </div>
                 <div className='col-xs-6 percentage'>
                     <h3 style={{ color: percentColor}}>{this.props.dayChange}%</h3>

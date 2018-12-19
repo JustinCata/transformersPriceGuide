@@ -12,17 +12,97 @@
     height: 350px;
     margin-bottom: 15px;
 }
+.Card img{
+    border-radius: 10px;
+}
 .Card .price{
-    
+    border-right: 1px solid #05102D;
+    border-radius: 0px 0px 0px 5px;
     background-color: white;
     text-align: center;
 }
 .Card .percentage{
-    
+    border-left: 1px solid #05102D;
+    border-radius: 0px 0px 5px 0px;
     background-color: white;
     text-align: center;
 }
 
 .Card h3{
-    margin-top: 0%;
+    margin-top: 5px;
+}
+/* =========================Responsiveness==============================================*/
+/* =========================Responsiveness==============================================*/
+/* =========================Responsiveness==============================================*/
+/* =========================Responsiveness==============================================*/
+/* =========================Responsiveness==============================================*/
+/* =========================Responsiveness==============================================*/
+/* =========================Responsiveness==============================================*/
+/* =========================Responsiveness==============================================*/
+/* =========================Responsiveness==============================================*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 350px) {
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 640px) {
+  
+}
+@media only screen and (min-width: 500px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 568px) and (max-width: 767px) {
+    .nav img {
+        max-width: 500px;
+        padding: 25px;
+    }
+    .Card img{
+        height: 284px !important;
+    }
+    .Card .image{
+        height: 284px !important;
+    }
+    .form-inline .form-control {
+        width: 75%;
+        margin-right: 0px;
+    }
+    .submitSearch{
+        font-size: 14px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .form-inline .form-control {
+        width: 75%;
+    }
+    .Card .image{
+        height: 212px !important;
+    }
+    .Card h3{
+        font-size: 20px;
+    }
+
+}
+
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) and (max-width: 1190px) {
+    .Card img{
+        height: 284px !important;
+    }
+    .Card .image{
+        height: 284px !important;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1280px) {
+  
+}
+@media only screen and (min-width: 1400px) {
+
 }

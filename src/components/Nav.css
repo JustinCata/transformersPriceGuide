@@ -11,3 +11,13 @@
 .form-inline .form-control {
     width:50%;
 }
+.submitSearch{
+    background-color: white;
+    color: #05102D;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 34px;
+    margin-left: 25px;
+
+
+}

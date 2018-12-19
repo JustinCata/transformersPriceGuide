@@ -21,13 +21,15 @@ class Nav extends Component {
     render(){
         return (
             <div className='Landing'>
-                <div className="col-sm-12 nav">
+                <div className="col-xs-12 nav">
                     {/*Logo will go here*/}
                     <img src= {logo} alt= "Logo"/>
-                    <div className='col-sm-12 Search'>
+                    <div className='col-xs-12 Search'>
                     <form action="#" onSubmit={this.onSubmit} className="form-inline">
-                        <input id="search" className="form-control" type="search" placeholder="Enter Card Name or Card ID" style={{ fontFamily:"Arial, FontAwesome"}} aria-label="Search" />
-                        <input type="submit" value="Find Card" />
+                        <span style={{display: 'inline-flex'}}>
+                            <input id="search" className="form-control" type="search" placeholder="Enter Card Name" style={{ fontFamily:"Arial, FontAwesome"}} aria-label="Search" />
+                            <input className="submitSearch" type="submit" value="Find Card" />
+                        </span>
                     </form>
                 </div>      
                 </div>                
