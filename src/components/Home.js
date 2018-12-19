@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+
 import Nav from './Nav';
 import Card from './Card';
 import './Home.css'
@@ -70,6 +72,12 @@ class Home extends Component {
         ));
         return (
             <div className='Home'>
+                <Helmet>
+                    <title>Transformers TCG Prices</title>
+                    <meta name="description" content="Transformers TCG Prices. Checkout the top 5 winning and losing cards of the day." />
+                    <meta property="og:title" content="Transformers TCG Prices" />
+                    <meta property="og:description" content="Transformers TCG Prices. Checkout the top 5 winning and losing cards of the day." />
+                </Helmet>
                 <Nav handleSearch={(search) => this.handleSearch(search)} />
                 <div className='col-xs-12 col-md-6 col-sm-6 title'>
                     <h2 id="risingTitle">Rising Cards</h2>

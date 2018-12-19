@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import logo from "./assets/transformers-logo.png"
 import "./Nav.css"
 
@@ -23,7 +24,9 @@ class Nav extends Component {
             <div className='Landing'>
                 <div className="col-xs-12 nav">
                     {/*Logo will go here*/}
-                    <img src= {logo} alt= "Logo"/>
+                    <Link to='/'>
+                        <img src= {logo} alt= "Logo"/>
+                    </Link>
                     <div className='col-xs-12 Search'>
                     <form action="#" onSubmit={this.onSubmit} className="form-inline">
                         <span id="searchField">

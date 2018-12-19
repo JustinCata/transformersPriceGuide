@@ -57,7 +57,7 @@
         width: 100%;
         display: inline-flex !important;
         margin-bottom: 15px;
-        margin-left: 30px;
+        padding-left: 30px;
     }
     .submitSearch{
         font-size: 14px;
