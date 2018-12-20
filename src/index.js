@@ -12,7 +12,7 @@ ReactDOM.render(
     <div>
       <Route exact path='/'component={Home}/> 
       <Route path='/search/:query' render={props => <Search {...props} />} />
-      <Route path='/card/:card_id' render={props => <ProductView {...props} />} />
+      <Route path='/card/:cardName' render={props => <ProductView {...props} />} />
     </div>
 </Router>,
  document.getElementById('root'));
