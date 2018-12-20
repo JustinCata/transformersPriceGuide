@@ -54,7 +54,7 @@ app.get('/card/:cardName', (request, response) => {
         // console.log(res);
         
         data = data.replace(/\$OG_TITLE/g, `${res.posts[0].name} | Transformers TCG Prices`);
-        data = data.replace(/\$OG_DESCRIPTION/g, `${res.posts[0].name} ${res.posts[0].cardNumber} is a ${res.posts[0].rarity} card and has an average sale price of ${res.avgPrice}. Performance: ${res.dayChange}% in the past 24 hours.`);
+        data = data.replace(/\$OG_DESCRIPTION/g, `${res.posts[0].name} ${res.posts[0].cardNumber} is a ${res.posts[0].rarity} card and has an average sale price of ${res.posts[0].avgPrice}. Performance: ${res.posts[0].dayChange}% in the past 24 hours.`);
         data = data.replace(/\$OG_URL/g, `https://transformersprices.com/card/${cardName}`);
         result = data.replace(/\$OG_IMAGE/g, `https://development.metamesh.io/${res.posts[0].image}`);
         response.send(result);
