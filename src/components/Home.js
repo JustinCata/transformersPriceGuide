@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
+import mixpanel from 'mixpanel-browser';
 
 import Nav from './Nav';
 import logo from './assets/color_logo.png';
 import Card from './Card';
 import './Home.css'
-
+mixpanel.init('c5bad8f59c99ba6b634f4b3d25c032c4');
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -18,6 +19,7 @@ class Home extends Component {
         this.handleSearch = this.handleSearch.bind(this);
     }
     componentDidMount() {
+        mixpanel.track('Home Page')
         this.getCards();
     }
     getCards() {

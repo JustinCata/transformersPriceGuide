@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { matchPath } from 'react-router';
 import Helmet from 'react-helmet';
+import mixpanel from 'mixpanel-browser';
+
 import Nav from './Nav'
 import Product from './Product'
 import './Search.css'
 import './ProductView.css'
 
+mixpanel.init('c5bad8f59c99ba6b634f4b3d25c032c4');
 
 class Search extends Component {
     constructor(props) {
@@ -20,6 +23,7 @@ class Search extends Component {
 }
 
     componentDidMount() {
+        mixpanel.track('Searched Card')
         const query = this.props.match.params.query;
         this.setState({
             query: query,

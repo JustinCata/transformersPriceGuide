@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { matchPath } from 'react-router';
+import mixpanel from 'mixpanel-browser';
 import Nav from './Nav';
 import './ProductView.css';
 import './Card.css';
 
+mixpanel.init('c5bad8f59c99ba6b634f4b3d25c032c4');
 class ProductView extends Component {
     constructor(props) {
         super(props);
@@ -22,6 +24,7 @@ class ProductView extends Component {
     }
 
     componentDidMount() {
+        mixpanel.track('Checked Card')
         const match = matchPath(this.props.history.location.pathname, {
             path: '/card/:cardName',
             exact: false,
