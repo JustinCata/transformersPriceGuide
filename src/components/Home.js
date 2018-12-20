@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import Nav from './Nav';
+import logo from './assets/color_logo.png';
 import Card from './Card';
 import './Home.css'
 
@@ -86,6 +87,12 @@ class Home extends Component {
                 <div className='col-xs-12 col-md-6 col-sm-6 title'>
                     <h2 id="fallingTitle">Losing Cards</h2>
                     {fallingCards}
+                </div>
+                <div style={{ backgroundColor: 'white', textAlign: 'center', paddingBottom: '20px' }} className="col-xs-12">
+                    <p>These prices are calculated according to eBay sales and listings</p>
+                    <p>Made by:</p>
+                    <a href="https://metamesh.io"><img style={{ width: '300px' }} src={logo} /></a>
+
                 </div>
             </div>
         );
