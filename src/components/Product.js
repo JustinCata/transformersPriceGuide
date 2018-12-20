@@ -13,13 +13,13 @@ class Product extends Component {
 
         return (
             <div className='col-xs-12'>
-                <div className='col-xs-12 product-card'>
+                <div className='col-xs-6 product-card search-image'>
                     <Link to={this.state.viewLink}>
-                        <img style={{width: '100%'}} src={`https://development.metamesh.io/${this.props.image}`} alt="card"/>
+                        <img src={`https://development.metamesh.io/${this.props.image}`} alt="card"/>
                     </Link>
                 </div>
                 
-                <div className='col-xs-12 product-card'>
+                <div className='col-xs-6 product-card'>
                     <h4 className='col-xs-12'>{this.props.cardName}</h4>
                     <div className='col-xs-12'>Card Name</div>
                     <h4 className='col-xs-12 Stat'>{this.props.cardID}</h4>

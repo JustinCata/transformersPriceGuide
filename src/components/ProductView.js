@@ -11,6 +11,9 @@ class ProductView extends Component {
         this.state = {
             query: '',
             avgPrice: 0.00,
+            highPrice: 0,
+            lowPrice: 0,
+            dayChange: 0,
             viewLink: `/card/${String(props.cardName)}`,
         };
 
@@ -101,9 +104,9 @@ class ProductView extends Component {
         return(
             <div className='col-xs-12 main'>
                 {this.state.navbar}
-                <div className='col-xs-12 product-card'>
+                <div className='col-xs-12 product-card productview-card'>
                     <Link to={this.state.viewLink}>
-                        <img src={`https://development.metamesh.io/${this.state.image}`} style={{width: '100%'}}/>
+                        <img src={`https://development.metamesh.io/${this.state.image}`} />
                     </Link>
                 </div>
                 <div className='col-xs-12 product-card'>
@@ -116,11 +119,11 @@ class ProductView extends Component {
                         <div className='col-xs-12' style={{marginBottom: 10}}>Card ID</div>
                     </div>
                     <div className='col-xs-6'>
-                        <h4 className='col-xs-12'>${this.state.highPrice}</h4>
+                        <h4 className='col-xs-12'>${this.state.highPrice.toFixed(2)}</h4>
                         <div className='col-xs-12'>Listed High Price</div>
-                        <h4 className='col-xs-12 Stat'>${this.state.lowPrice}</h4>
+                        <h4 className='col-xs-12 Stat'>${this.state.lowPrice.toFixed(2)}</h4>
                         <div className='col-xs-12'>Listed Low Price</div>
-                        <h4 className='col-xs-12 Stat ' style={{color: percentColor}} >{this.state.dayChange}%</h4>
+                        <h4 className='col-xs-12 Stat ' style={{color: percentColor}} >{this.state.dayChange.toFixed(2)}%</h4>
                         <div className='col-xs-12'>Daily Price Change</div>
                     </div>
                 </div>

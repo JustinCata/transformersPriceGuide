@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { matchPath } from 'react-router';
+import Helmet from 'react-helmet';
 import Nav from './Nav'
 import Product from './Product'
 import './Search.css'
@@ -45,8 +46,7 @@ class Search extends Component {
         }).then(res => {
             console.log(res);
             this.setState({
-                posts: res.posts,
-                navbar: <Nav handleSearch={(search) => this.handleSearch(search)}/>,
+                posts: res.posts
             });
         })
         .catch(err => {
@@ -65,9 +65,17 @@ class Search extends Component {
             />));
         return (
             <div>
-                {this.state.navbar}
+                <Helmet>
+                    <title>Transformers TCG Prices</title>
+                    <meta name="description" content="Transformers TCG Prices. Checkout the top 5 winning and losing cards of the day." />
+                    <meta property="og:title" content="Transformers TCG Prices" />
+                    <meta property="og:description" content="Transformers TCG Prices. Checkout the top 5 winning and losing cards of the day." />
+                </Helmet>
+                <Nav handleSearch={(search) => this.handleSearch(search)}/>
                 <div className="search-bar">
+                <div id="searchRes" className="col-xs-12">
                 <h3><i className="fa fa-search" aria-hidden="true"></i> Search results for: <strong>{this.state.query}</strong></h3>
+                </div>
                     {searchResults}
                 </div>
                

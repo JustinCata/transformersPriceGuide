@@ -82,6 +82,10 @@
     .Card h3{
         font-size: 18px;
     }
+    .form-inline .form-control {
+        width: 65%;
+        margin-right: 0px;
+    }
 }
 @media only screen and (min-width: 500px) {
 
