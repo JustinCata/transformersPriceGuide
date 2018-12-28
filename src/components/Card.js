@@ -13,12 +13,21 @@ class Card extends Component {
         const api = 'https://development.metamesh.io/';
         let percentColor;
         let tileColor;
+        let avgSold;
+        let dayChng;
         if (this.props.dayChange > 0) {
             percentColor = 'green';
             tileColor = '#00FF7F';
         } else {
             percentColor = 'red';
             tileColor = '#FF6666';
+        }
+        if (this.props.avgPrice.toFixed(2)== 0.00) {
+            avgSold = 'No Sales';
+            dayChng = '0.00'
+        } else {
+            avgSold = `$${this.props.avgPrice.toFixed(2)}`;
+            dayChng = `${this.props.dayChange.toFixed(2)}`;
         }
 
         return (
@@ -29,10 +38,10 @@ class Card extends Component {
                     </Link>
                 </div>
                 <div className='col-xs-6 price'>
-                    <h3>${this.props.avgPrice.toFixed(2)}</h3>
+                    <h3>{avgSold}</h3>
                 </div>
                 <div className='col-xs-6 percentage'>
-                    <h3 style={{ color: percentColor}}>{this.props.dayChange.toFixed(2)}%</h3>
+                    <h3 style={{ color: percentColor}}>{dayChng}%</h3>
                 </div>
             </div>
         );

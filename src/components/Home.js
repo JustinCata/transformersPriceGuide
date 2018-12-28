@@ -32,11 +32,11 @@ class Home extends Component {
         })
         .then(res => {
             // get top 5
-            const rising = res.posts.splice(0, 5);
+            const rising = res.posts.splice(0, 10);
             // flip the script
             const inverseRise = res.posts.reverse();
             // get bottom 5
-            const falling = inverseRise.splice(0, 5);
+            const falling = inverseRise.splice(0, 10);
             this.setState({
                 Rising: rising,
                 Falling: falling,

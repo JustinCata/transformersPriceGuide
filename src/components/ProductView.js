@@ -98,12 +98,18 @@ class ProductView extends Component {
     render() {
 
         let percentColor;
+        let avgSold;
         if (this.state.dayChange > 0) {
             percentColor = 'green';
         } else {
             percentColor = 'red';
         }
-
+        if (this.state.avgPrice.toFixed(2)== 0.00) {
+            avgSold = 'No Sales';
+            this.state.dayChange = 0.00
+        } else {
+            avgSold = `$${this.state.avgPrice.toFixed(2)}`;
+        }
         return(
             <div className='col-xs-12 main'>
                 {this.state.navbar}
@@ -114,7 +120,7 @@ class ProductView extends Component {
                 </div>
                 <div className='col-xs-12 product-card'>
                     <div className='col-xs-6'>  
-                        <h4 className='col-xs-12' style={{color: percentColor}}>${(this.state.avgPrice).toFixed(2)}</h4>
+                        <h4 className='col-xs-12' style={{color: percentColor}}>{avgSold}</h4>
                         <div className='col-xs-12'>Average Sold Price</div>
                         <h4 className='col-xs-12 Stat'>{this.state.rarity}</h4>
                         <div className='col-xs-12'>Card Rarity</div>
