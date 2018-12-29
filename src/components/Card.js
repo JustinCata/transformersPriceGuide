@@ -18,13 +18,20 @@ class Card extends Component {
         if (this.props.dayChange > 0) {
             percentColor = 'green';
             tileColor = '#00FF7F';
-        } else {
+        } 
+        if (this.props.dayChange === 0) {
+            percentColor = 'rgb(3, 16, 46)';
+            tileColor = 'rgb(3, 16, 46)';
+        }
+        if (this.props.dayChange < 0) {
             percentColor = 'red';
             tileColor = '#FF6666';
         }
-        if (this.props.avgPrice.toFixed(2)== 0.00) {
+        if (this.props.avgPrice.toFixed(2) == 0.00) {
             avgSold = 'No Sales';
-            dayChng = '0.00'
+            dayChng = '0.00';
+            percentColor = 'rgb(3, 16, 46)';
+            tileColor = 'rgb(3, 16, 46)';
         } else {
             avgSold = `$${this.props.avgPrice.toFixed(2)}`;
             dayChng = `${this.props.dayChange.toFixed(2)}`;
