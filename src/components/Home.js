@@ -24,7 +24,7 @@ class Home extends Component {
         this.handleSearch = this.handleSearch.bind(this);
     }
     componentDidMount() {
-        // mixpanel.track('Home Page')
+        mixpanel.track('Home Page')
         this.getCards();
     }
     getCards() {
