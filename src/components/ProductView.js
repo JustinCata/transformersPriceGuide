@@ -17,6 +17,7 @@ class ProductView extends Component {
             lowPrice: 0,
             dayChange: 0,
             viewLink: `/card/${String(props.cardName)}`,
+            image:'',
         };
 
     this.handleSearch = this.handleSearch.bind(this);
@@ -33,12 +34,12 @@ class ProductView extends Component {
           const cardName = match.params.cardName;
           this.card(cardName);
 
-          const query = this.props.match.params.query;
-        this.setState({
-            query: query,
-        }, ()=>{
-            this.search(query);
-        });
+        // const query = this.props.match.params.query;
+        // this.setState({
+        //     query: query,
+        // }, ()=>{
+        //     this.search(query);
+        // });
     }
 
     handleSearch(search) {
@@ -49,24 +50,24 @@ class ProductView extends Component {
         });
     }
 
-    search(query) {
-        fetch(`https://development.metamesh.io/api/v1/guest/post?search=${query}`, {
-            mode: 'cors',
-            method: 'GET',   
-        })
-        .then(results => {
-            return results.json();
-        }).then(res => {
-            console.log(res);
-            this.setState({
-                posts: res.posts,
-                navbar: <Nav handleSearch={(search) => this.handleSearch(search)}/>,
-            });
-        })
-        .catch(err => {
-            console.log(err);
-        });
-    }
+    // search(query) {
+    //     fetch(`https://development.metamesh.io/api/v1/guest/post?search=${query}`, {
+    //         mode: 'cors',
+    //         method: 'GET',   
+    //     })
+    //     .then(results => {
+    //         return results.json();
+    //     }).then(res => {
+    //         console.log(res);
+    //         this.setState({
+    //             posts: res.posts,
+    //             navbar: <Nav handleSearch={(search) => this.handleSearch(search)}/>,
+    //         });
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //     });
+    // }
 
     card(cardName) {
         fetch(`https://development.metamesh.io/api/v1/guest/post?search=${cardName}`, {
@@ -78,6 +79,7 @@ class ProductView extends Component {
         }).then(res => {
             console.log(res);
             this.setState({
+                navbar: <Nav handleSearch={(search) => this.handleSearch(search)}/>,
                 cardName: res.posts[0].name,
                 cardNumber: res.posts[0].cardNumber,
                 rarity: res.posts[0].rarity,
